@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/project-process",
+      "destination": "/ProjectProcessE2E.html"
+    },
+    {
+      "source": "/feature-bug-process",
+      "destination": "/FeatureBugProcessE2E.html"
+    }
+  ]
+}
+

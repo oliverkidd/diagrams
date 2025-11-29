@@ -1,0 +1,9 @@
+{
+  "name": "diagrams",
+  "version": "1.0.0",
+  "description": "Diagram pages for embedding",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
+

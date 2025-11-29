@@ -84,158 +84,199 @@
         border-color: #f3f4f6;
       }
 
-      /* Timeline Alignment Calculation 
-           Top Padding (24px) + Header (48px) + Margin (16px) + Track Padding Top (32px) + Half Card (approx 80px)
-           = ~200px offset for the connector line
-        */
+      /* Timeline Alignment Calculation */
       .connector-offset {
-        margin-top: 202px; /* Calibrated to match the absolute center line */
+        margin-top: 202px;
+      }
+
+      /* Accordion Summary Marker Removal & Styling */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
       }
     </style>
   </head>
   <body
     class="bg-white text-slate-800 font-sans h-screen w-screen overflow-x-auto overflow-y-auto flex flex-col"
   >
-    <!-- <div class="mb-6 shrink-0">
-      <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-        Project Creation Process
-      </h1>
-      <p class="text-slate-500 text-sm font-medium">
-        End-to-End Workflow (Stages 1 — 7)
-      </p>
-    </div> -->
-
     <!-- Main Scrollable Container -->
     <div class="flex-1 overflow-x-auto overflow-y-auto no-scrollbar p-2">
       <!-- Flex Row for Phases -->
       <div class="inline-flex items-start gap-0">
         <!-- ================= PHASE 1 ================= -->
         <div
-          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <!-- Fixed Height Header -->
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+          <!-- Padding wrapper for top content -->
+          <div class="p-6 pb-0">
+            <!-- Fixed Height Header -->
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Phase 1: Scoping
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Agreed Scope & Estimates
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >2 Weeks</span
               >
-                Phase 1: Scoping
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: Agreed Scope & Estimates
+            </div>
+
+            <!-- Timeline Track -->
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Brainstorming
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>PM collates info from users.</li>
+                    <li>Initial ID of problems.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip active-Users">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Scope Definition
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Convert to bullet points.</li>
+                    <li>Define boundaries.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Scope Review
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Footer -->
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">
+                The goal of this stage is to move from a broad problem to a
+                specific set of bullet points that define the project
+                boundaries.
               </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Brainstorming:</strong> PM leads the collection of
+                  information regarding the problem, collaborating with the
+                  Client Team and users.
+                </li>
+                <li>
+                  <strong>Scope Definition:</strong> PM converts the
+                  brainstormed information into a structured list of bullet
+                  points outlining the scope of the new project.
+                </li>
+                <li>
+                  <strong>Scope Review Meeting:</strong>
+                  <ul class="list-[circle] ml-4 mt-1 space-y-1 text-slate-500">
+                    <li>
+                      PM proposes the scope bullet points to Engineering, CT,
+                      and C-Suite.
+                    </li>
+                    <li>
+                      Engineering provides rough estimates for each scope point.
+                    </li>
+                    <li>
+                      Decisions are made on exactly what will be tackled in the
+                      project (aligned with quarterly planning).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >2 Weeks</span
-            >
-          </div>
-
-          <!-- Timeline Track (Fixed Height/Alignment) -->
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <!-- The Continuous Line (Inside Phase) -->
-            <!-- Negative margins ensure it touches the border edge-to-edge -->
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Brainstorming</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>PM collates info from users.</li>
-                  <li>Initial ID of problems.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip active-CT">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip active-Users">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">
-                  Scope Definition
-                </h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Convert to bullet points.</li>
-                  <li>Define boundaries.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Gate -->
-            <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
-            >
-              <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
-              </div>
-              <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
-              >
-                Scope Review
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
-            >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Eng provides rough
-                estimates here.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Alignment with quarterly
-                planning is key.
-              </li>
-            </ul>
-          </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -245,126 +286,163 @@
 
         <!-- ================= PHASE 2 ================= -->
         <div
-          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Phase 2: Drafting
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: PRD, Designs & Dates
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >1 Week</span
               >
-                Phase 2: Drafting
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: PRD, Designs & Dates
+            </div>
+
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Draft PRD & Designs
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Async process.</li>
+                    <li>Wireframes match PRD.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip active-UX">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">PRD Review</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Comments to align solution.</li>
+                    <li>Async review.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip active-Exec">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Kick-off & Sched.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">
+                This stage runs asynchronously initially, culminating in a
+                synchronous agreement on the plan.
               </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Drafting & Design:</strong> PM creates the draft PRD.
+                  UX Team creates wireframes/designs to visualize the solution
+                  outlined in the PRD.
+                </li>
+                <li>
+                  <strong>PRD Review:</strong> Relevant parties from the Scope
+                  Review (Stage 1) review the document and leave comments to
+                  align on the solution.
+                </li>
+                <li>
+                  <strong>Kick-off Meeting:</strong> PM schedules a meeting with
+                  Engineering, C-Suite, and UX to walk through the PRD and
+                  solution to ensure full alignment.
+                </li>
+                <li>
+                  <strong>Scheduling:</strong> The PRD is split into successive
+                  stages. Engineers sign off on estimated delivery dates.
+                  Milestones are added to Linear aligned to these dates.
+                </li>
+              </ul>
             </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >1 Week</span
-            >
-          </div>
-
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">
-                  Draft PRD & Designs
-                </h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Async process.</li>
-                  <li>Wireframes match PRD.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip active-UX">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">PRD Review</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Comments to align solution.</li>
-                  <li>Async review.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip active-Exec">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip active-CT">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Gate -->
-            <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
-            >
-              <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
-              </div>
-              <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
-              >
-                Kick-off & Sched.
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
-            >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Eng signs off dates during
-                Kick-off meeting.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Milestones are added to
-                Linear immediately.
-              </li>
-            </ul>
-          </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -374,102 +452,142 @@
 
         <!-- ================= PHASE 3 ================= -->
         <div
-          class="w-[350px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[350px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
-              >
-                Phase 3: Building
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: Built Features
-              </p>
-            </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >Variable</span
-            >
-          </div>
-
-          <div
-            class="relative w-full flex items-center justify-center gap-8 py-8"
-          >
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
               <div>
-                <h3 class="font-bold text-sm text-slate-800">Development</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  <li>Build to milestones.</li>
-                  <li>Weekly written updates.</li>
-                </ul>
+                  Phase 3: Building
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Built Features
+                </p>
               </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip inactive">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >Variable</span
+              >
             </div>
 
-            <!-- Gate -->
             <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              class="relative w-full flex items-center justify-center gap-8 py-8"
             >
               <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
-              </div>
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
               <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
               >
-                Handover
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">Development</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Build to milestones.</li>
+                    <li>Weekly written updates.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip inactive">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Handover
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
             >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Fortnightly 30m Check-ins
-                scheduled.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span>
-                <strong>Blockers:</strong> Don't wait for mtg.
-              </li>
-            </ul>
-          </div>
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">
+                The execution phase where communication is key to avoiding
+                blockers.
+              </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Development:</strong> Engineers build towards the
+                  first agreed milestone.
+                </li>
+                <li>
+                  <strong>Fortnightly Check-ins:</strong> A 30-minute meeting
+                  between Eng and PM to check progress against the milestone.
+                  (Note: Engineers must not wait for this meeting if
+                  blocked—reach out immediately).
+                </li>
+                <li>
+                  <strong>Weekly Updates:</strong> Engineers must provide a
+                  written update on the project within Linear every week.
+                </li>
+                <li>
+                  <strong>Handover:</strong> When Eng is satisfied/finished,
+                  they notify the PM for a review (conducted locally or on a
+                  separate branch).
+                </li>
+                <li>
+                  <strong>Quick Fixes:</strong> Engineers address immediate
+                  feedback or fixes before moving to the formal review stage.
+                </li>
+              </ul>
+            </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -479,123 +597,164 @@
 
         <!-- ================= PHASE 4 ================= -->
         <div
-          class="w-[850px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[850px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Phase 4: Reviewing
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Merged to Main & Edge Cases
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >Variable</span
               >
-                Phase 4: Reviewing
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: Merged to Main & Edge Cases
+            </div>
+
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">PR Reviews</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Leads review PRs.</li>
+                    <li>Comments addressed.</li>
+                    <li>Merge to Main.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip inactive">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Staging Review
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Deployed behind Feature Flag.</li>
+                    <li>PM checks functionality.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Release Forecasting
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Monday updates.</li>
+                    <li>Triggers Edge Case writing.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip active-QA">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">
+                This stage focuses on code quality and preparing the feature for
+                the testing environment.
               </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>PR Reviews:</strong> Lead Engineers review Pull
+                  Requests (PRs) and provide coding comments.
+                </li>
+                <li>
+                  <strong>Merge to Main:</strong> Engineers address comments and
+                  finalize solutions.
+                </li>
+                <li>
+                  <strong>Staging Deployment:</strong> Engineer notifies PM when
+                  PRs are all in Staging and merged to the Main branch.
+                </li>
+                <li>
+                  <strong>Staging Review:</strong> PM reviews the entire project
+                  on Staging (required as features are behind Feature Flags).
+                </li>
+                <li>
+                  <strong>Release Forecasting:</strong> On Mondays, Engineers
+                  must provide an update on which features they expect to be
+                  fully released that week. This triggers the Quality/PM teams
+                  to write Edge Cases for the upcoming testing phase.
+                </li>
+              </ul>
             </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >Variable</span
-            >
-          </div>
-
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">PR Reviews</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Leads review PRs.</li>
-                  <li>Comments addressed.</li>
-                  <li>Merge to Main.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip inactive">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Staging Review</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Deployed behind Feature Flag.</li>
-                  <li>PM checks functionality.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">
-                  Release Forecasting
-                </h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Monday updates.</li>
-                  <li>Triggers Edge Case writing.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip active-QA">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
-            >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Monday forecasting triggers
-                QA prep.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Code must be behind Feature
-                Flags.
-              </li>
-            </ul>
-          </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -605,125 +764,157 @@
 
         <!-- ================= PHASE 5 ================= -->
         <div
-          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Phase 5: Testing
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Stable Feature
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >~3 Days</span
               >
-                Phase 5: Testing
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: Stable Feature
+            </div>
+
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">Staging QA</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>External QA preliminary tests.</li>
+                    <li>PM validates vs PRD.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip active-QA">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Edge Case Testing
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Test specific scenarios.</li>
+                    <li>Verify stability.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip inactive">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip active-QA">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Stability Decision
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">
+                Verification that the build matches the requirements and is
+                bug-free.
               </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Staging QA:</strong> The External QA team and PM run
+                  preliminary tests on the Staging environment.
+                </li>
+                <li>
+                  <strong>Edge Case Testing:</strong> Testing is conducted
+                  specifically against the Edge Cases written during the Review
+                  phase.
+                </li>
+                <li>
+                  <strong>Refinement:</strong> A decision is made regarding code
+                  stability. If issues are found, the project loops back to
+                  Engineering for coding fixes.
+                </li>
+              </ul>
             </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >~3 Days</span
-            >
-          </div>
-
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Staging QA</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>External QA preliminary tests.</li>
-                  <li>PM validates vs PRD.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip active-QA">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">
-                  Edge Case Testing
-                </h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Test specific scenarios.</li>
-                  <li>Verify stability.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip inactive">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip active-QA">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
-
-            <!-- Gate -->
-            <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
-            >
-              <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
-              </div>
-              <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
-              >
-                Stability Decision
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
-            >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Issues found? Loop back to
-                Phase 3.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Must be stable before Prod.
-              </li>
-            </ul>
-          </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -733,148 +924,189 @@
 
         <!-- ================= PHASE 6 ================= -->
         <div
-          class="w-[850px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[850px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Phase 6: Releasing
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Live Feature & Comms
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >Variable</span
               >
-                Phase 6: Releasing
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: Live Feature & Comms
-              </p>
             </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >Variable</span
-            >
+
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
+
+              <!-- Card 1 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Beta / Pilots
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Flag ON for small group.</li>
+                    <li>Qualitative feedback calls.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip active-Users">Users</span>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">A/B Testing</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Scale test (50%).</li>
+                    <li>Check scalability.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip active-Eng">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip active-Users">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Remove Flag
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">Full Launch</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Flag removed.</li>
+                    <li>Product comms blast.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip active-Users">Users</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
             >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Beta / Pilots</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Flag ON for small group.</li>
-                  <li>Qualitative feedback calls.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip active-CT">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip active-Users">Users</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">A/B Testing</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Scale test (50%).</li>
-                  <li>Check scalability.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip active-Eng">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip active-Users">Users</span>
-              </div>
-            </div>
-
-            <!-- Gate -->
-            <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
-            >
-              <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
-              </div>
-              <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
-              >
-                Remove Flag
-              </div>
-            </div>
-
-            <!-- Card 3 -->
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
             <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Full Launch</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Flag removed.</li>
-                  <li>Product comms blast.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip active-CT">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip active-Users">Users</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
-            >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Beta testers get specific
-                comms first.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Staggered release minimizes
+              <p class="italic mb-2">
+                A staggered release process using Feature Flags to minimize
                 risk.
-              </li>
-            </ul>
-          </div>
+              </p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Beta (Early User Feedback):</strong> Feature Flag is
+                  turned on for a small number of specific clinics/users.
+                  Meetings are set up to collect qualitative feedback. If tweaks
+                  are required, Eng implements changes.
+                </li>
+                <li>
+                  <strong>A/B Testing (Scale):</strong> Feature Flag is turned
+                  on for a larger, random subset (e.g., 50%) of users to test
+                  scalability.
+                </li>
+                <li>
+                  <strong>Full Release:</strong> Once PM is satisfied with
+                  stability and feedback, the Feature Flag is removed (turned on
+                  for everyone).
+                </li>
+                <li>
+                  <strong>Communication:</strong> Product Comms (emails) are
+                  sent to the user base explaining the feature. (Note: Early
+                  beta testers should receive communication prior to the general
+                  blast).
+                </li>
+              </ul>
+            </div>
+          </details>
         </div>
 
         <!-- Connector Line -->
@@ -884,125 +1116,153 @@
 
         <!-- ================= PHASE 7 ================= -->
         <div
-          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-6 shadow-sm group hover:border-slate-400 transition-colors"
+          class="w-[600px] flex flex-col h-fit relative border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 shadow-sm group hover:border-slate-400 transition-colors"
         >
-          <div class="h-12 flex justify-between items-start mb-4 shrink-0">
-            <div>
-              <h2
-                class="font-bold text-slate-700 uppercase tracking-widest text-sm"
-              >
-                Phase 7: Feedback
-              </h2>
-              <p class="text-xs text-blue-600 font-bold mt-1">
-                Output: V2 Insights
-              </p>
-            </div>
-            <span
-              class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
-              >1-4 Weeks</span
-            >
-          </div>
-
-          <div class="relative w-full flex items-center gap-8 py-8">
-            <div
-              class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
-            ></div>
-
-            <!-- Card 1 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
+          <div class="p-6 pb-0">
+            <div class="h-12 flex justify-between items-start mb-4 shrink-0">
               <div>
-                <h3 class="font-bold text-sm text-slate-800">
-                  Targeted Outreach
-                </h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  <li>Reach out to specific users.</li>
-                  <li>Feedback on live feature.</li>
-                </ul>
+                  Phase 7: Feedback
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: V2 Insights
+                </p>
               </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip active-CT">CT</span
-                ><span class="chip inactive">QA</span
-                ><span class="chip active-Users">Users</span>
-              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >1-4 Weeks</span
+              >
             </div>
 
-            <!-- Card 2 -->
-            <div
-              class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
-            >
-              <div>
-                <h3 class="font-bold text-sm text-slate-800">Data Review</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
-                >
-                  <li>Review Posthog data.</li>
-                  <li>Brainstorm V2.</li>
-                </ul>
-              </div>
-              <div class="flex flex-wrap gap-1">
-                <span class="chip inactive">Exec</span
-                ><span class="chip active-PM">PM</span
-                ><span class="chip inactive">Eng</span
-                ><span class="chip inactive">UX</span
-                ><span class="chip inactive">CT</span
-                ><span class="chip active-QA">QA</span
-                ><span class="chip inactive">Users</span>
-              </div>
-            </div>
+            <div class="relative w-full flex items-center gap-8 py-8">
+              <div
+                class="absolute top-1/2 left-[-24px] right-[-24px] h-1 bg-slate-300 z-0"
+              ></div>
 
-            <!-- Gate -->
-            <div
-              class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
-            >
+              <!-- Card 1 -->
               <div
-                class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
               >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  ></path>
-                </svg>
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">
+                    Targeted Outreach
+                  </h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Reach out to specific users.</li>
+                    <li>Feedback on live feature.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip active-Users">Users</span>
+                </div>
               </div>
+
+              <!-- Card 2 -->
               <div
-                class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3 z-10 h-40 justify-between"
               >
-                Next Cycle
+                <div>
+                  <h3 class="font-bold text-sm text-slate-800">Data Review</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1 mt-2"
+                  >
+                    <li>Review Posthog data.</li>
+                    <li>Brainstorm V2.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip inactive">CT</span
+                  ><span class="chip active-QA">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+
+              <!-- Gate -->
+              <div
+                class="relative flex flex-col items-center justify-center z-20 gate cursor-pointer"
+              >
+                <div
+                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover/gate:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="absolute top-14 w-28 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
+                >
+                  Next Cycle
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="mt-auto pt-4 border-t border-slate-200/50">
-            <h4
-              class="text-[10px] font-extrabold text-slate-400 uppercase mb-2"
+          <details
+            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
             >
-              Phase Notes
-            </h4>
-            <ul class="text-[11px] text-slate-600 space-y-1">
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Insights feed next
-                Brainstorming.
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-blue-400">•</span> Cycle completes.
-              </li>
-            </ul>
-          </div>
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">Post-launch analysis and improvements.</p>
+              <ul class="list-disc ml-4 space-y-1">
+                <li>
+                  <strong>Targeted Outreach:</strong> CS team gathers client
+                  insights, issues, and enhancement ideas.
+                </li>
+                <li>
+                  <strong>Post-launch monitoring:</strong> Using tools to track
+                  adoption, usage, and impact (Posthog, Autoplay).
+                </li>
+                <li>
+                  <strong>Post-Launch Review:</strong> Product and Engineering
+                  collaborate to assess success vs. objectives, technical
+                  learnings, and next iteration priorities.
+                </li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </div>

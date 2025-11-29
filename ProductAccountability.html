@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roles & Responsibilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* --- UTILITIES --- */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Accordion Reset */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Custom list bullet for accordion content */
+      .detail-list li {
+        position: relative;
+        padding-left: 1rem;
+      }
+      .detail-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #94a3b8; /* slate-400 */
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-slate-800 font-sans h-screen w-screen overflow-hidden flex flex-col p-2"
+  >
+    <!-- Main Scrollable Container -->
+    <div class="flex-1 overflow-x-auto overflow-y-auto no-scrollbar">
+      <!-- Main Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- CARD 1: PRODUCT MARKET FIT -->
+        <div
+          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+        >
+          <!-- Header -->
+          <div class="p-6 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg font-bold text-slate-800">
+                Product Market Fit
+              </h2>
+            </div>
+          </div>
+
+          <!-- Body Grid -->
+          <div class="p-6 grid grid-cols-2 gap-6 flex-1">
+            <!-- Col 1: PM -->
+            <div class="space-y-3">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Product Manager
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Validates feature solves real problem</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Discovery with users & CT/CS</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Defines success metrics</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Tracks post-launch impact</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Col 2: Eng -->
+            <div class="space-y-3 border-l border-slate-100 pl-4">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+                Engineering
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Provides feasibility input during discovery</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Understands user context</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Accordion -->
+          <details
+            class="group mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-xl"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 rounded-b-xl"
+            >
+              <p class="mb-3 font-medium">
+                PMs own ensuring that each feature is solving a real problem and
+                continues to deliver value after release by:
+              </p>
+              <ul class="detail-list space-y-1.5 ml-1">
+                <li>
+                  Maintaining structured discovery across users, CT/CS,
+                  Advisors.
+                </li>
+                <li>
+                  Converting insights into clear problem definitions, success
+                  metrics, and PRD requirements.
+                </li>
+                <li>
+                  Tracking post-launch performance (Posthog/Autoplay) and
+                  propose iterations where value is not yet realised.
+                </li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- CARD 2: PROJECT TIMELINES -->
+        <div
+          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+        >
+          <div class="p-6 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg font-bold text-slate-800">
+                Project Timelines
+              </h2>
+            </div>
+          </div>
+
+          <div class="p-6 grid grid-cols-2 gap-6 flex-1">
+            <!-- PM -->
+            <div class="space-y-3">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Product Manager
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Owns the plan & milestones</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Ensures clear documentation (PRD)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Communicates changes to stakeholders</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Eng -->
+            <div class="space-y-3 border-l border-slate-100 pl-4">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+                Engineering
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Owns execution & communication</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Delivers against milestones</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Flags risks proactively</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-xl"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 rounded-b-xl"
+            >
+              <p class="mb-3 font-medium">
+                PMs own the plan; Engineers own proactive communication and
+                execution.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <strong class="text-slate-800 block mb-1">For PMs:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Ensure clear scope and documentation before build (PRD,
+                      designs, sizing).
+                    </li>
+                    <li>
+                      Establish milestones and maintain visibility through
+                      Linear.
+                    </li>
+                    <li>Communicate changes early to CT/CS and leadership.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong class="text-slate-800 block mb-1">For Eng:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>Deliver against agreed milestones.</li>
+                    <li>
+                      Flag delays or risks as soon as they emerge — PMs are not
+                      expected to chase.
+                    </li>
+                    <li>Keep task status current and transparent.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- CARD 3: STABILITY & DELIVERY -->
+        <div
+          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+        >
+          <div class="p-6 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center text-purple-500"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg font-bold text-slate-800">
+                Stability & Delivery
+              </h2>
+            </div>
+          </div>
+
+          <div class="p-6 grid grid-cols-2 gap-6 flex-1">
+            <!-- PM -->
+            <div class="space-y-3">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Product Manager
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Validates "Done" meets requirements</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Maintains clear specs</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Validates UX intent</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Eng -->
+            <div class="space-y-3 border-l border-slate-100 pl-4">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+                Engineering
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Builds exactly to PRD/Figma</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Delivers stable, tested code</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Responds to QA issues quickly</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-xl"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 rounded-b-xl"
+            >
+              <p class="mb-3 font-medium">
+                Engineers own building to spec; PMs own validating the outcome.
+                Both share responsibility for quality.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <strong class="text-slate-800 block mb-1">For Eng:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Build exactly to PRD and Figma; avoid adding unapproved
+                      scope.
+                    </li>
+                    <li>
+                      Deliver technically stable, well-tested functionality.
+                    </li>
+                    <li>
+                      Respond quickly to issues found in QA or early production.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <strong class="text-slate-800 block mb-1">For PMs:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Validate that “done” meets requirements, intended UX, and
+                      user needs — not just code completion.
+                    </li>
+                    <li>
+                      Maintain clear, unambiguous specs and resolve questions
+                      quickly.
+                    </li>
+                    <li>Treat quality as a shared responsibility.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- CARD 4: FEATURE RELEASE -->
+        <div
+          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+        >
+          <div class="p-6 pb-4 border-b border-slate-100">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center text-green-500"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg font-bold text-slate-800">Feature Release</h2>
+            </div>
+          </div>
+
+          <div class="p-6 grid grid-cols-2 gap-6 flex-1">
+            <!-- PM -->
+            <div class="space-y-3">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Product Manager
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Leads release readiness</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Coordinates comms & timing</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Owns release notes</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Eng -->
+            <div class="space-y-3 border-l border-slate-100 pl-4">
+              <div
+                class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+                Engineering
+              </div>
+              <ul class="text-xs text-slate-600 space-y-2.5">
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Supports execution</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Provides visibility on rollout risks</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg
+                    class="w-4 h-4 text-slate-400 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span>Early monitoring</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <details
+            class="group mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-xl"
+          >
+            <summary
+              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-xl group-open:rounded-none group-open:bg-slate-100"
+            >
+              <span>Read Details</span>
+              <svg
+                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </summary>
+            <div
+              class="px-6 pb-6 pt-2 text-xs text-slate-600 leading-relaxed bg-slate-50 rounded-b-xl"
+            >
+              <p class="mb-3 font-medium">
+                PMs lead release readiness; Engineering and QA support execution
+                and stability.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <strong class="text-slate-800 block mb-1">For PMs:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Confirm QA completion, staging fidelity, and production
+                      readiness (incl. feature flags).
+                    </li>
+                    <li>
+                      Coordinate release timing and communication with QA,
+                      Engineering, CT/CS.
+                    </li>
+                    <li>
+                      Own release notes, internal/external comms, and
+                      documentation updates.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <strong class="text-slate-800 block mb-1">For Eng:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Provide visibility on risk areas, known issues, and
+                      rollout constraints.
+                    </li>
+                    <li>Support early monitoring and fixes.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

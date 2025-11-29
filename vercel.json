@@ -11,6 +11,10 @@
     {
       "source": "/quarterly-planning",
       "destination": "/QuarterlyPlanningE2E.html"
+    },
+    {
+      "source": "/product-accountability",
+      "destination": "/ProductAccountability.html"
     }
   ]
 }

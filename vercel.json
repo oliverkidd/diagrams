@@ -15,6 +15,10 @@
     {
       "source": "/product-accountability",
       "destination": "/ProductAccountability.html"
+    },
+    {
+      "source": "/product-tools",
+      "destination": "/ProductTools.html"
     }
   ]
 }

@@ -99,6 +99,20 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
+
+      /* Copy button styling */
+      .copy-btn {
+        transition: all 0.2s;
+      }
+      .copy-btn:hover {
+        opacity: 0.7;
+      }
+      .copy-btn.copied {
+        color: #10b981;
+      }
+      .section-description {
+        display: none;
+      }
     </style>
   </head>
   <body
@@ -113,9 +127,9 @@
           class="absolute top-[312px] left-0 right-0 h-1 bg-slate-300 z-0 rounded-full pointer-events-none mx-4"
         ></div>
 
-        <!-- ================= PHASE 1: COLLECTION ================= -->
+        <!-- ================= PHASE 1: COLLECTION & DOCUMENTATION ================= -->
         <div
-          class="flex flex-col w-[550px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[1000px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <!-- Header -->
           <div class="px-6 pt-6 pb-2">
@@ -124,10 +138,10 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Phase 1: Collection
+                  Phase 1: Collection & Documentation
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
-                  Output: Raw Report
+                  Output: Linear Ticket
                 </p>
               </div>
             </div>
@@ -139,20 +153,21 @@
               class="absolute center-line-pos left-0 right-0 h-1 bg-slate-300 z-0"
             ></div>
             <div class="absolute inset-0 flex items-center px-8 gap-8 z-10">
-              <!-- Card 1 -->
+              <!-- Card 1: Intake -->
               <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+                class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
               >
-                <h3 class="font-bold text-sm text-slate-800">Intake</h3>
+                <h3 class="font-bold text-sm text-slate-800">Collect</h3>
                 <ul
                   class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                 >
-                  <li>Intercom, Calls, Site Visits.</li>
-                  <li>All staff can collect.</li>
+                  <li>
+                    Feedback collected via site visits, Intercom, and surveys.
+                  </li>
                 </ul>
                 <div class="flex flex-wrap gap-1 mt-1">
                   <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">PM</span
                   ><span class="chip inactive">Eng</span
                   ><span class="chip inactive">UX</span
                   ><span class="chip active-CT">CT</span
@@ -160,20 +175,66 @@
                   ><span class="chip active-Users">Users</span>
                 </div>
               </div>
-              <!-- Card 2 -->
+              <!-- Card 2: Replication -->
               <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+                class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
               >
-                <h3 class="font-bold text-sm text-slate-800">Categorization</h3>
+                <h3 class="font-bold text-sm text-slate-800">Replication</h3>
                 <ul
                   class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                 >
-                  <li>Identify as <strong>Bug</strong>.</li>
-                  <li>Identify as <strong>Feature</strong>.</li>
+                  <li>Initial Reporter replicates behavior in Staging.</li>
+                  <li>Initial Reporter replicates behavior in Production.</li>
+                  <li>If replicated, confirmed to the user.</li>
                 </ul>
                 <div class="flex flex-wrap gap-1 mt-1">
                   <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+              <!-- Card 3: Investigation -->
+              <div
+                class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+              >
+                <h3 class="font-bold text-sm text-slate-800">Investigation</h3>
+                <ul
+                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+                >
+                  <li>
+                    Initial Reporter investigates cause using ChatGPT, Browser
+                    Inspector.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip inactive">PM</span
+                  ><span class="chip inactive">Eng</span
+                  ><span class="chip inactive">UX</span
+                  ><span class="chip active-CT">CT</span
+                  ><span class="chip inactive">QA</span
+                  ><span class="chip inactive">Users</span>
+                </div>
+              </div>
+              <!-- Card 4: Create Ticket -->
+              <div
+                class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+              >
+                <h3 class="font-bold text-sm text-slate-800">Create Ticket</h3>
+                <ul
+                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+                >
+                  <li>
+                    Reporter fills out Linear ticket with required fields.
+                  </li>
+                </ul>
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <span class="chip inactive">Exec</span
+                  ><span class="chip inactive">PM</span
                   ><span class="chip inactive">Eng</span
                   ><span class="chip inactive">UX</span
                   ><span class="chip active-CT">CT</span
@@ -185,33 +246,41 @@
           </div>
 
           <!-- Footer -->
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-1"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-1"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 The gathering of raw feedback and issues from various external
-                touchpoints.
+                touchpoints, validation, and formalization into the project
+                management system.
               </p>
               <ul class="list-disc ml-4 space-y-1">
                 <li>
@@ -226,117 +295,6 @@
                   functionality) or Feature Requests (new/improved
                   functionality).
                 </li>
-              </ul>
-            </div>
-          </details>
-        </div>
-        <!-- CONNECTOR -->
-        <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
-
-        <!-- ================= PHASE 2: INVESTIGATION ================= -->
-        <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
-        >
-          <div class="px-6 pt-6 pb-2">
-            <div class="flex justify-between items-start">
-              <div>
-                <h2
-                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
-                >
-                  Phase 2: Investigation
-                </h2>
-                <p class="text-xs text-blue-600 font-bold mt-1">
-                  Output: Verified Issue
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="diagram-stage-h w-full relative shrink-0">
-            <div
-              class="absolute center-line-pos left-0 right-0 h-1 bg-slate-300 z-0"
-            ></div>
-            <div class="absolute inset-0 flex items-center px-8 gap-8 z-10">
-              <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
-              >
-                <h3 class="font-bold text-sm text-slate-800">Replication</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
-                >
-                  <li>
-                    Try in <strong>Prod</strong> & <strong>Staging</strong>.
-                  </li>
-                  <li>Use Inspector/ChatGPT.</li>
-                </ul>
-                <div class="flex flex-wrap gap-1 mt-1">
-                  <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
-                  ><span class="chip inactive">Eng</span
-                  ><span class="chip inactive">UX</span
-                  ><span class="chip active-CT">CT</span
-                  ><span class="chip inactive">QA</span
-                  ><span class="chip inactive">Users</span>
-                </div>
-              </div>
-              <div
-                class="relative flex flex-col items-center justify-center group cursor-pointer gate"
-              >
-                <div
-                  class="hexagon w-12 h-12 bg-amber-400 flex items-center justify-center shadow-lg border-2 border-white group-hover:scale-110 transition-transform"
-                >
-                  <svg
-                    class="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                    ></path>
-                  </svg>
-                </div>
-                <div
-                  class="absolute top-14 w-24 text-[10px] font-bold text-center text-white bg-amber-400 rounded px-2 py-1 shadow-sm border border-slate-100"
-                >
-                  Internal Verify
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
-          >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
-            <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
-            >
-              <p class="italic mb-2">
-                Before a ticket is created, the issue must be validated to
-                prevent false reports reaching engineering.
-              </p>
-              <ul class="list-disc ml-4 space-y-1">
                 <li>
                   <strong>Replication:</strong> The Initial Reporter must
                   attempt to replicate the behavior in both the live Production
@@ -351,91 +309,6 @@
                   <strong>User Confirmation:</strong> Only after steps above are
                   complete should validity be confirmed to the user.
                 </li>
-              </ul>
-            </div>
-          </details>
-        </div>
-
-        <!-- CONNECTOR -->
-        <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
-
-        <!-- ================= PHASE 3: DOCS ================= -->
-        <div
-          class="flex flex-col w-[300px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
-        >
-          <div class="px-6 pt-6 pb-2">
-            <div class="flex justify-between items-start">
-              <div>
-                <h2
-                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
-                >
-                  Phase 3: Docs
-                </h2>
-                <p class="text-xs text-blue-600 font-bold mt-1">
-                  Output: Linear Ticket
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="diagram-stage-h w-full relative shrink-0">
-            <div
-              class="absolute center-line-pos left-0 right-0 h-1 bg-slate-300 z-0"
-            ></div>
-            <div
-              class="absolute inset-0 flex items-center justify-center px-8 z-10"
-            >
-              <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
-              >
-                <h3 class="font-bold text-sm text-slate-800">Create Ticket</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
-                >
-                  <li>Fill Priority & Customer.</li>
-                  <li><strong>Urgent?</strong> Post to Slack.</li>
-                </ul>
-                <div class="flex flex-wrap gap-1 mt-1">
-                  <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
-                  ><span class="chip inactive">Eng</span
-                  ><span class="chip inactive">UX</span
-                  ><span class="chip active-CT">CT</span
-                  ><span class="chip inactive">QA</span
-                  ><span class="chip inactive">Users</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
-          >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
-            <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
-            >
-              <p class="italic mb-2">
-                Formalizing the issue into the project management system.
-              </p>
-              <ul class="list-disc ml-4 space-y-1">
                 <li>
                   <strong>Ticket Creation:</strong> Reporter fills out Linear
                   ticket with Priority/Customer fields.
@@ -449,15 +322,15 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
         <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
 
-        <!-- ================= PHASE 4: ALLOCATION (SPLIT) ================= -->
+        <!-- ================= PHASE 2: ALLOCATION (SPLIT) ================= -->
         <div
-          class="flex flex-col w-[600px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="px-6 pt-6 pb-2">
             <div class="flex justify-between items-start">
@@ -465,7 +338,7 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Phase 4: Allocation
+                  Phase 2: Allocation
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Assigned Eng
@@ -476,20 +349,19 @@
 
           <!-- Split Diagram Stage -->
           <div class="diagram-stage-h w-full relative shrink-0">
-            <!-- SVG with adjusted path ending closer to the last card -->
-            <!-- The H value at the end is extended to 540 before curving back to 560 -->
+            <!-- SVG: Start as one line, split into two, stay split by right edge -->
             <svg
               class="absolute inset-0 w-full h-full pointer-events-none z-0"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M 0 240 H 30 C 40 240, 40 100, 60 100 H 520 C 540 100, 540 240, 550 240 H 600"
+                d="M 0 240 H 30 C 40 240, 40 100, 60 100 H 540 C 560 100, 560 100, 570 100 H 600"
                 fill="none"
                 stroke="#cbd5e1"
                 stroke-width="4"
               />
               <path
-                d="M 0 240 H 30 C 40 240, 40 380, 60 380 H 520 C 540 380, 540 240, 550 240 H 600"
+                d="M 0 240 H 30 C 40 240, 40 380, 60 380 H 540 C 560 380, 560 380, 570 380 H 600"
                 fill="none"
                 stroke="#cbd5e1"
                 stroke-width="4"
@@ -520,8 +392,9 @@
                   </svg>
                   Urgent Path
                 </div>
+                <!-- Card 1-->
                 <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">
                     On-Call Response
@@ -529,15 +402,18 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Picked up immediately.</li>
-                    <li>User notified.</li>
+                    <li>
+                      Ticket linked in #et-general channel and @eng-oncall
+                      tagged.
+                    </li>
+                    <li>Eng confirms when ticket is picked up.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
-                    ><span class="chip inactive">PM</span
+                    ><span class="chip active-PM">PM</span
                     ><span class="chip active-Eng">Eng</span
                     ><span class="chip inactive">UX</span
-                    ><span class="chip inactive">CT</span
+                    ><span class="chip active-CT">CT</span
                     ><span class="chip inactive">QA</span
                     ><span class="chip inactive">Users</span>
                   </div>
@@ -564,39 +440,24 @@
                   </svg>
                   Standard Path
                 </div>
+                <!-- Card 1-->
                 <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">
-                    Continuous Triage
+                    Triage Review
                   </h3>
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>PM Reviews Intake.</li>
-                    <li>Prioritize: Todo/Backlog.</li>
-                  </ul>
-                  <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip inactive">Exec</span
-                    ><span class="chip active-PM">PM</span
-                    ><span class="chip inactive">Eng</span
-                    ><span class="chip inactive">UX</span
-                    ><span class="chip inactive">CT</span
-                    ><span class="chip inactive">QA</span
-                    ><span class="chip inactive">Users</span>
-                  </div>
-                </div>
-                <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
-                >
-                  <h3 class="font-bold text-sm text-slate-800">
-                    Fortnightly Sync
-                  </h3>
-                  <ul
-                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
-                  >
-                    <li>PM/CT alignment.</li>
-                    <li>Ensure nothing missed.</li>
+                    <li>PM continuously reviews Linear triage.</li>
+                    <li>
+                      CT Fortnightly meetings review PM prioritisation and
+                      ensure nothing is missed.
+                    </li>
+                    <li>
+                      Tickets moved to "Needs Improving", "Backlog", or "To Do".
+                    </li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
@@ -612,29 +473,36 @@
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-2"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 Deciding when and by whom the work will be done.
@@ -657,20 +525,51 @@
                   </ul>
                 </li>
                 <li>
-                  <strong>Status Assignment:</strong> Tickets moved to "Needs
-                  Improving", "Backlog", or "To Do".
+                  <strong>Tickets moved to:</strong>
+                  <ul class="list-[circle] ml-4 mt-1 space-y-1 text-slate-500">
+                    <li>"Needs Improving" (Reporter must re-write)</li>
+                    <li>
+                      "Backlog" (Work will be queued for fixathon at end of
+                      quarter)
+                    </li>
+                    <li>"To Do" (Work will be picked up imminently)</li>
+                  </ul>
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
-        <!-- CONNECTOR -->
-        <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
+        <!-- CONNECTOR - Split Paths -->
+        <div class="w-12 shrink-0 relative z-0 h-[620px]">
+          <svg
+            class="absolute inset0 w-full h-full pointer-events-none z-0"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 0 174 H 48"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="4"
+            />
+            <path
+              d="M 0 314 H 48"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+            />
+            <path
+              d="M 0 454 H 48"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
 
-        <!-- ================= PHASE 5: BUILDING ================= -->
+        <!-- ================= PHASE 3: BUILDING (SPLIT) ================= -->
         <div
-          class="flex flex-col w-[300px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[375px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="px-6 pt-6 pb-2">
             <div class="flex justify-between items-start">
@@ -678,7 +577,7 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Phase 5: Building
+                  Phase 3: Building
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Merged Code
@@ -688,82 +587,163 @@
           </div>
 
           <div class="diagram-stage-h w-full relative shrink-0">
-            <div
-              class="absolute center-line-pos left-0 right-0 h-1 bg-slate-300 z-0"
-            ></div>
-            <div
-              class="absolute inset-0 flex items-center justify-center px-8 z-10"
+            <!-- SVG: Two split lines throughout -->
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
-              >
-                <h3 class="font-bold text-sm text-slate-800">Fixing</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+              <path
+                d="M 0 100 H 30 C 40 100, 40 100, 60 100 H 540 C 560 100, 560 100, 570 100 H 600"
+                fill="none"
+                stroke="#cbd5e1"
+                stroke-width="4"
+              />
+              <path
+                d="M 0 380 H 30 C 40 380, 40 380, 60 380 H 540 C 560 380, 560 380, 570 380 H 600"
+                fill="none"
+                stroke="#cbd5e1"
+                stroke-width="4"
+              />
+            </svg>
+
+            <div
+              class="absolute inset-0 flex flex-col justify-between py-12 px-8 z-10"
+            >
+              <!-- Top Row: Urgent Path -->
+              <div class="flex items-start gap-8 relative">
+                <div
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
-                  <li><strong>Urgent:</strong> Push to Prod.</li>
-                  <li><strong>Standard:</strong> Push to Stage.</li>
-                  <li>Update Linear status.</li>
-                </ul>
-                <div class="flex flex-wrap gap-1 mt-1">
-                  <span class="chip inactive">Exec</span
-                  ><span class="chip inactive">PM</span
-                  ><span class="chip active-Eng">Eng</span
-                  ><span class="chip inactive">UX</span
-                  ><span class="chip inactive">CT</span
-                  ><span class="chip inactive">QA</span
-                  ><span class="chip inactive">Users</span>
+                  <h3 class="font-bold text-sm text-slate-800">Fixing</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+                  >
+                    <li>Ticket updated to "In Progress" in Linear.</li>
+                    <li>
+                      Eng expedite code to Staging, bypassing standard release
+                      cycle.
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="chip inactive">Exec</span
+                    ><span class="chip inactive">PM</span
+                    ><span class="chip active-Eng">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Bottom Row: Standard Path -->
+              <div class="flex items-end gap-8 relative">
+                <div
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                >
+                  <h3 class="font-bold text-sm text-slate-800">Fixing</h3>
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+                  >
+                    <li>Ticket updated to "In Progress" in Linear.</li>
+                    <li>
+                      Eng push code to Staging following standard release
+                      process.
+                    </li>
+                  </ul>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="chip inactive">Exec</span
+                    ><span class="chip inactive">PM</span
+                    ><span class="chip active-Eng">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-3"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-3"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">
-                The execution of the fix or feature build.
+                The execution of the fix or feature build, with different paths
+                for urgent and standard items.
               </p>
               <ul class="list-disc ml-4 space-y-1">
                 <li>
-                  <strong>Status Updates:</strong> Engineers must update the
-                  Linear status as they work (In Progress, PR Review, Merged).
+                  <strong>Urgent Path:</strong> Engineers push code directly to
+                  Production immediately, bypassing the standard release cycle.
+                  Linear status must be updated as work progresses.
                 </li>
                 <li>
-                  <strong>Urgent Fixes:</strong> For urgent bugs, Engineers push
-                  code to Production immediately, bypassing the standard release
-                  cycle.
+                  <strong>Standard Path:</strong> Engineers push code to Staging
+                  following the standard release process. Linear status must be
+                  updated as work progresses (In Progress, PR Review, Merged).
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
-        <!-- CONNECTOR -->
-        <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
+        <!-- CONNECTOR - Split Paths -->
+        <!-- CONNECTOR - Split Paths -->
+        <div class="w-12 shrink-0 relative z-0 h-[620px]">
+          <svg
+            class="absolute inset0 w-full h-full pointer-events-none z-0"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M 0 174 H 48"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="4"
+            />
+            <path
+              d="M 0 314 H 48"
+              fill="none"
+              stroke="white"
+              stroke-width="4"
+            />
+            <path
+              d="M 0 454 H 48"
+              fill="none"
+              stroke="#cbd5e1"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
 
-        <!-- ================= PHASE 6: TESTING (SPLIT) ================= -->
+        <!-- ================= PHASE 4: TESTING (SPLIT) ================= -->
         <div
           class="flex flex-col w-[850px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
@@ -773,7 +753,7 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Phase 6: Testing
+                  Phase 4: Testing
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Verified Fix
@@ -783,19 +763,19 @@
           </div>
 
           <div class="diagram-stage-h w-full relative shrink-0">
-            <!-- SVG with extended lines -->
+            <!-- SVG: Starts as two split lines, merges back to one by end -->
             <svg
               class="absolute inset-0 w-full h-full pointer-events-none z-0"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M 0 240 H 30 C 40 240, 40 100, 60 100 H 770 C 790 100, 790 240, 800 240 H 850"
+                d="M 0 100 H 30 C 40 100, 40 100, 60 100 H 770 C 790 100, 790 240, 800 240 H 850"
                 fill="none"
                 stroke="#cbd5e1"
                 stroke-width="4"
               />
               <path
-                d="M 0 240 H 30 C 40 240, 40 380, 60 380 H 770 C 790 380, 790 240, 800 240 H 850"
+                d="M 0 380 H 30 C 40 380, 40 380, 60 380 H 770 C 790 380, 790 240, 800 240 H 850"
                 fill="none"
                 stroke="#cbd5e1"
                 stroke-width="4"
@@ -807,34 +787,14 @@
             >
               <!-- Top Row -->
               <div class="flex items-start gap-8 relative">
-                <!-- LABELS RESTORED -->
                 <div
-                  class="absolute -bottom-[20px] z-11 left-[15px] text-[10px] font-extrabold text-red-400 tracking-widest uppercase flex items-center gap-1"
-                >
-                  <svg
-                    class="w-3 h-3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M5 10l7-7m0 0l7 7m-7-7v18"
-                    ></path>
-                  </svg>
-                  Urgent Path
-                </div>
-                <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">Eng Check</h3>
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Code review passed.</li>
-                    <li>Quick smoke test.</li>
+                    <li>Eng verifies fix in Staging & Production.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
@@ -846,10 +806,10 @@
                     ><span class="chip inactive">Users</span>
                   </div>
                 </div>
-                <div class="w-52 h-2 shrink-0"></div>
+                <div class="min-w-[240px] h-2 shrink-0"></div>
                 <!-- Spacer -->
                 <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-red-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">
                     Reporter Check
@@ -857,12 +817,11 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Verify fix in Prod.</li>
-                    <li>Confirm stability.</li>
+                    <li>Initial Reporter verifies fix in Production.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
-                    ><span class="chip active-PM">PM</span
+                    ><span class="chip inactive">PM</span
                     ><span class="chip inactive">Eng</span
                     ><span class="chip inactive">UX</span
                     ><span class="chip active-CT">CT</span
@@ -873,34 +832,14 @@
               </div>
               <!-- Bottom Row -->
               <div class="flex items-end gap-8 relative">
-                <!-- LABELS RESTORED -->
                 <div
-                  class="absolute -top-[20px] z-11 left-[15px] text-[10px] font-extrabold text-blue-400 tracking-widest uppercase flex items-center gap-1"
-                >
-                  <svg
-                    class="w-3 h-3"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    ></path>
-                  </svg>
-                  Feature / Standard
-                </div>
-                <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">Eng Check</h3>
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Unit tests pass.</li>
-                    <li>Merged to Staging.</li>
+                    <li>Eng verifies fix in Staging.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
@@ -913,14 +852,13 @@
                   </div>
                 </div>
                 <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">QA Check</h3>
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Regression testing.</li>
-                    <li>External QA team.</li>
+                    <li>External QA verifies fix in Staging.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
@@ -933,16 +871,16 @@
                   </div>
                 </div>
                 <div
-                  class="w-52 bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
+                  class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border-l-4 border-l-blue-400 border-y border-r border-slate-200 flex flex-col gap-3"
                 >
                   <h3 class="font-bold text-sm text-slate-800">
-                    Reporter Check
+                    Quality Check
                   </h3>
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Verify against ticket.</li>
-                    <li>Approve for release.</li>
+                    <li>Initial Reporter verifies fix in Production.</li>
+                    <li>PM approves fix for release.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span class="chip inactive">Exec</span
@@ -958,29 +896,36 @@
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-4"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-4"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 Verifying the fix works before telling the customer.
@@ -1003,15 +948,15 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
         <div class="w-12 shrink-0 relative z-0 h-[620px]"></div>
 
-        <!-- ================= PHASE 7: COMMS ================= -->
+        <!-- ================= PHASE 5: COMMS ================= -->
         <div
-          class="flex flex-col w-[500px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[300px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="px-6 pt-6 pb-2">
             <div class="flex justify-between items-start">
@@ -1019,10 +964,10 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Phase 7: Comms
+                  Phase 5: Comms
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
-                  Output: Closed Loop
+                  Output: User Notified
                 </p>
               </div>
             </div>
@@ -1034,7 +979,7 @@
             ></div>
             <div class="absolute inset-0 flex items-center px-8 gap-8 z-10">
               <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+                class="min-w-[200px] bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
               >
                 <h3 class="font-bold text-sm text-slate-800">
                   User Notification
@@ -1042,12 +987,12 @@
                 <ul
                   class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                 >
-                  <li>Contact user directly.</li>
-                  <li>Confirm resolution.</li>
+                  <li>Initial Reporter contacts user to confirm resolution</li>
+                  <li>Initial Reported marks ticket as "done" in Linear.</li>
                 </ul>
                 <div class="flex flex-wrap gap-1 mt-1">
                   <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
+                  ><span class="chip inactive">PM</span
                   ><span class="chip inactive">Eng</span
                   ><span class="chip inactive">UX</span
                   ><span class="chip active-CT">CT</span
@@ -1055,52 +1000,39 @@
                   ><span class="chip active-Users">Users</span>
                 </div>
               </div>
-              <div
-                class="w-52 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
-              >
-                <h3 class="font-bold text-sm text-slate-800">Close Ticket</h3>
-                <ul
-                  class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
-                >
-                  <li>Mark Linear as <strong>Done</strong>.</li>
-                  <li>Ticket is closed.</li>
-                </ul>
-                <div class="flex flex-wrap gap-1 mt-1">
-                  <span class="chip inactive">Exec</span
-                  ><span class="chip active-PM">PM</span
-                  ><span class="chip inactive">Eng</span
-                  ><span class="chip inactive">UX</span
-                  ><span class="chip active-CT">CT</span
-                  ><span class="chip inactive">QA</span
-                  ><span class="chip inactive">Users</span>
-                </div>
-              </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-5"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-5"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Closing the loop with the end user.</p>
               <ul class="list-disc ml-4 space-y-1">
@@ -1115,9 +1047,116 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      function copyDescription(button) {
+        const contentId = button.getAttribute("data-content-id");
+        const contentDiv = document.getElementById(contentId);
+
+        if (!contentDiv) return;
+
+        // Convert HTML content to markdown
+        let markdown = "";
+
+        // Process all child elements
+        const processNode = (node, depth = 0) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent.trim();
+            if (text) markdown += text + " ";
+            return;
+          }
+
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const tagName = node.tagName.toLowerCase();
+
+            if (tagName === "p") {
+              const text = node.textContent.trim();
+              if (text) {
+                // Check if it's italic
+                if (node.classList.contains("italic")) {
+                  markdown += "\n\n*" + text + "*\n\n";
+                } else {
+                  markdown += "\n\n" + text + "\n\n";
+                }
+              }
+            } else if (tagName === "ul") {
+              const items = node.querySelectorAll(":scope > li");
+              const isCircle =
+                node.classList.contains("list-[circle]") ||
+                node.classList.contains("list-circle");
+
+              items.forEach((li) => {
+                let itemText = "";
+                const processListItem = (itemNode) => {
+                  if (itemNode.nodeType === Node.TEXT_NODE) {
+                    itemText += itemNode.textContent.trim() + " ";
+                  } else if (itemNode.nodeType === Node.ELEMENT_NODE) {
+                    if (itemNode.tagName.toLowerCase() === "strong") {
+                      itemText += "**" + itemNode.textContent.trim() + "** ";
+                    } else if (itemNode.tagName.toLowerCase() === "ul") {
+                      // Handle nested lists
+                      const nestedItems =
+                        itemNode.querySelectorAll(":scope > li");
+                      nestedItems.forEach((nestedLi) => {
+                        const nestedText = nestedLi.textContent.trim();
+                        itemText += "\n  - " + nestedText;
+                      });
+                    } else {
+                      Array.from(itemNode.childNodes).forEach(processListItem);
+                    }
+                  }
+                };
+
+                Array.from(li.childNodes).forEach(processListItem);
+                const bullet = isCircle ? "-" : "-";
+                markdown += bullet + " " + itemText.trim() + "\n";
+              });
+              markdown += "\n";
+            } else if (tagName === "li") {
+              // This will be handled by parent ul
+              return;
+            } else if (tagName === "strong") {
+              const text = node.textContent.trim();
+              markdown += "**" + text + "**";
+            } else {
+              // Recursively process children
+              Array.from(node.childNodes).forEach((child) =>
+                processNode(child, depth)
+              );
+            }
+          }
+        };
+
+        Array.from(contentDiv.childNodes).forEach((node) => processNode(node));
+
+        // Clean up extra newlines and spaces
+        markdown = markdown
+          .replace(/\n{3,}/g, "\n\n")
+          .replace(/ +/g, " ")
+          .trim();
+
+        // Copy to clipboard
+        navigator.clipboard
+          .writeText(markdown)
+          .then(() => {
+            // Visual feedback
+            const originalColor = button.style.color;
+            button.classList.add("copied");
+            button.style.color = "#10b981";
+
+            setTimeout(() => {
+              button.classList.remove("copied");
+              button.style.color = originalColor || "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy:", err);
+            alert("Failed to copy to clipboard");
+          });
+      }
+    </script>
   </body>
 </html>

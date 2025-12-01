@@ -89,11 +89,17 @@
         margin-top: 217px;
       }
 
-      /* Accordion Summary Marker Removal & Styling */
-      details > summary {
-        list-style: none;
+      /* Copy button styling */
+      .copy-btn {
+        transition: all 0.2s;
       }
-      details > summary::-webkit-details-marker {
+      .copy-btn:hover {
+        opacity: 0.7;
+      }
+      .copy-btn.copied {
+        color: #10b981;
+      }
+      .section-description {
         display: none;
       }
     </style>
@@ -222,29 +228,36 @@
           </div>
 
           <!-- Interactive Footer -->
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-1"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-1"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 The goal of this stage is to move from a broad problem to a
@@ -281,7 +294,7 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Connector Line -->
@@ -399,29 +412,36 @@
             </div>
           </div>
 
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-2"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 This stage runs asynchronously initially, culminating in a
@@ -450,7 +470,7 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Connector Line -->
@@ -541,29 +561,36 @@
             </div>
           </div>
 
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-3"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-3"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 The execution phase where communication is key to avoiding
@@ -595,7 +622,7 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Connector Line -->
@@ -685,29 +712,36 @@
             </div>
           </div>
 
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-4"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-4"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 This stage focuses on code quality and preparing the feature for
@@ -745,7 +779,7 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Connector Line -->
@@ -862,29 +896,36 @@
             </div>
           </div>
 
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-5"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-5"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">
                 A staggered release process using Feature Flags to minimize
@@ -915,7 +956,7 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Connector Line -->
@@ -1011,29 +1052,36 @@
             </div>
           </div>
 
-          <details
-            class="group mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
+          <div
+            class="mt-auto border-t border-slate-200/60 rounded-b-2xl bg-white/50"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100/80 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-6"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-6"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-white/50 rounded-b-2xl"
             >
               <p class="italic mb-2">Post-launch analysis and improvements.</p>
               <ul class="list-disc ml-4 space-y-1">
@@ -1052,9 +1100,116 @@
                 </li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      function copyDescription(button) {
+        const contentId = button.getAttribute("data-content-id");
+        const contentDiv = document.getElementById(contentId);
+
+        if (!contentDiv) return;
+
+        // Convert HTML content to markdown
+        let markdown = "";
+
+        // Process all child elements
+        const processNode = (node, depth = 0) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent.trim();
+            if (text) markdown += text + " ";
+            return;
+          }
+
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const tagName = node.tagName.toLowerCase();
+
+            if (tagName === "p") {
+              const text = node.textContent.trim();
+              if (text) {
+                // Check if it's italic
+                if (node.classList.contains("italic")) {
+                  markdown += "\n\n*" + text + "*\n\n";
+                } else {
+                  markdown += "\n\n" + text + "\n\n";
+                }
+              }
+            } else if (tagName === "ul") {
+              const items = node.querySelectorAll(":scope > li");
+              const isCircle =
+                node.classList.contains("list-[circle]") ||
+                node.classList.contains("list-circle");
+
+              items.forEach((li) => {
+                let itemText = "";
+                const processListItem = (itemNode) => {
+                  if (itemNode.nodeType === Node.TEXT_NODE) {
+                    itemText += itemNode.textContent.trim() + " ";
+                  } else if (itemNode.nodeType === Node.ELEMENT_NODE) {
+                    if (itemNode.tagName.toLowerCase() === "strong") {
+                      itemText += "**" + itemNode.textContent.trim() + "** ";
+                    } else if (itemNode.tagName.toLowerCase() === "ul") {
+                      // Handle nested lists
+                      const nestedItems =
+                        itemNode.querySelectorAll(":scope > li");
+                      nestedItems.forEach((nestedLi) => {
+                        const nestedText = nestedLi.textContent.trim();
+                        itemText += "\n  - " + nestedText;
+                      });
+                    } else {
+                      Array.from(itemNode.childNodes).forEach(processListItem);
+                    }
+                  }
+                };
+
+                Array.from(li.childNodes).forEach(processListItem);
+                const bullet = isCircle ? "-" : "-";
+                markdown += bullet + " " + itemText.trim() + "\n";
+              });
+              markdown += "\n";
+            } else if (tagName === "li") {
+              // This will be handled by parent ul
+              return;
+            } else if (tagName === "strong") {
+              const text = node.textContent.trim();
+              markdown += "**" + text + "**";
+            } else {
+              // Recursively process children
+              Array.from(node.childNodes).forEach((child) =>
+                processNode(child, depth)
+              );
+            }
+          }
+        };
+
+        Array.from(contentDiv.childNodes).forEach((node) => processNode(node));
+
+        // Clean up extra newlines and spaces
+        markdown = markdown
+          .replace(/\n{3,}/g, "\n\n")
+          .replace(/ +/g, " ")
+          .trim();
+
+        // Copy to clipboard
+        navigator.clipboard
+          .writeText(markdown)
+          .then(() => {
+            // Visual feedback
+            const originalColor = button.style.color;
+            button.classList.add("copied");
+            button.style.color = "#10b981";
+
+            setTimeout(() => {
+              button.classList.remove("copied");
+              button.style.color = originalColor || "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy:", err);
+            alert("Failed to copy to clipboard");
+          });
+      }
+    </script>
   </body>
 </html>

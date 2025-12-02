@@ -64,7 +64,7 @@
 
       /* --- LAYOUT CONSTANTS --- */
       .diagram-stage-h {
-        height: 150px;
+        height: 200px;
       }
 
       .center-line-pos {
@@ -86,6 +86,20 @@
       details > summary::-webkit-details-marker {
         display: none;
       }
+
+      /* Copy button styling */
+      .copy-btn {
+        transition: all 0.2s;
+      }
+      .copy-btn:hover {
+        opacity: 0.7;
+      }
+      .copy-btn.copied {
+        color: #10b981;
+      }
+      .section-description {
+        display: none;
+      }
     </style>
   </head>
   <body
@@ -97,12 +111,12 @@
       <div class="inline-flex items-start gap-0 relative">
         <!-- GLOBAL BACKGROUND LINE -->
         <div
-          class="absolute top-[155px] left-0 right-0 h-1 bg-slate-300 z-0 rounded-full pointer-events-none mx-4"
+          class="absolute top-[180px] left-0 right-0 h-1 bg-slate-300 z-0 rounded-full pointer-events-none mx-4"
         ></div>
 
         <!-- ================= STAGE 1: GATHERING ================= -->
         <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="p-6 pb-0 relative z-10 flex-1">
             <div class="flex justify-between items-start mb-4 shrink-0">
@@ -134,41 +148,58 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Refine functional buckets.</li>
-                    <li>Draft long-list of projects.</li>
+                    <li>PMs Refine functional buckets & leads.</li>
+                    <li>Leads draft long-list of projects.</li>
+                    <li>
+                      Leads prioritise projects using 'High', 'Medium' & 'Low'
+                      labels.
+                    </li>
+                    <li>PMs review projects and standardise prioritisation.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip active-PM">PM</span>
-                    <span class="chip active-Exec">Leads</span>
+                    <span class="chip inactive">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip inactive">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-1"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-1"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Project Gathering & Prioritisation.</p>
               <ul class="list-decimal ml-4 space-y-1">
@@ -180,10 +211,10 @@
                   Bucket leads work with PMs to draft prioritised long-list of
                   projects within each bucket.
                 </li>
-                <li>PMs review projects and standardise prioritisation.</li>
+                <li>PMs review project details and prioritisation.</li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
@@ -191,7 +222,7 @@
 
         <!-- ================= STAGE 2: SIZING ================= -->
         <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="p-6 pb-0 relative z-10 flex-1">
             <div class="flex justify-between items-start mb-4 shrink-0">
@@ -223,74 +254,75 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Eng sizing of projects.</li>
-                    <li>Capacity check.</li>
-                    <li>Shortlisting based on priorities.</li>
+                    <li>
+                      Eng leads size days of work for High & Medium prio
+                      projects.
+                    </li>
+                    <li>Specialist buckets (Mobile, ML) sized by teams.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip active-PM">PM</span>
-                    <span class="chip active-Eng">Eng</span>
-                    <span class="chip active-Exec">Exec</span>
+                    <span class="chip active-Exec">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip active-Eng">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-2"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Project Sizing + Shortlisting.</p>
               <ul class="list-decimal ml-4 space-y-1">
                 <li>
-                  PMs review details on each project to ensure sufficient
-                  information.
-                </li>
-                <li>
                   Engineering leads determine sizing for High & Medium priority
                   projects based on PM details.
                 </li>
-                <li>
-                  PMs calculate total size of workload vs engineering capacity.
-                </li>
-                <li>
-                  Lupa defines top priority functional buckets for next quarter.
-                </li>
-                <li>
-                  PMs build proposed project-list based on Lupa priorities.
-                </li>
+                <li>Specialist buckets (Mobile, ML) sized by teams.</li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
         <div class="w-12 shrink-0 relative z-0"></div>
 
-        <!-- ================= STAGE 3: FINALISATION ================= -->
+        <!-- ================= STAGE 3: SHORTLISTING ================= -->
         <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="p-6 pb-0 relative z-10 flex-1">
             <div class="flex justify-between items-start mb-4 shrink-0">
@@ -298,7 +330,103 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Stage 3: Finalisation
+                  Stage 3: Shortlisting
+                </h2>
+                <p class="text-xs text-blue-600 font-bold mt-1">
+                  Output: Shortlisted project list
+                </p>
+              </div>
+              <span
+                class="bg-slate-200 text-slate-600 text-xs font-bold px-3 py-1 rounded-full"
+                >5 Wks Prior</span
+              >
+            </div>
+
+            <div class="diagram-stage-h w-full relative shrink-0">
+              <div class="absolute center-line-pos h-1 bg-slate-300 z-0"></div>
+              <div
+                class="absolute inset-0 flex items-center justify-center px-8 z-10"
+              >
+                <!-- Card -->
+                <div
+                  class="w-64 bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col gap-3"
+                >
+                  <ul
+                    class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
+                  >
+                    <li>Lupa defines P0 buckets for next quarter.</li>
+                    <li>PMs calculate total scope vs eng capacity.</li>
+                    <li>PMs propose short-list of projects.</li>
+                  </ul>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span class="chip active-Exec">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip inactive">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          >
+            <div
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-3"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-3"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+            >
+              <p class="italic mb-2">Project List Shortlisting.</p>
+              <ul class="list-decimal ml-4 space-y-1">
+                <li>Lupa defines P0 buckets for next quarter.</li>
+                <li>PMs calculate total scope vs eng capacity.</li>
+                <li>PMs propose short-list of projects.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONNECTOR -->
+        <div class="w-12 shrink-0 relative z-0"></div>
+
+        <!-- ================= STAGE 4: FINALISATION ================= -->
+        <div
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+        >
+          <div class="p-6 pb-0 relative z-10 flex-1">
+            <div class="flex justify-between items-start mb-4 shrink-0">
+              <div>
+                <h2
+                  class="font-bold text-slate-700 uppercase tracking-widest text-sm"
+                >
+                  Stage 4: Finalisation
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Finalised project list
@@ -322,47 +450,60 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Strategic goal review.</li>
-                    <li>Final agreement reached.</li>
-                    <li>Communicate to team.</li>
+                    <li>
+                      Meeting to refine proposed short-list and reach agreement.
+                    </li>
+                    <li>Short-list communicated to wider Lupa team.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip active-Exec">Exec</span>
-                    <span class="chip active-PM">PM</span>
+                    <span class="chip active-Exec">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip active-Eng">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-4"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-4"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Project List Finalisation.</p>
               <ul class="list-decimal ml-4 space-y-1">
                 <li>
-                  Proposed project list reviewed to ensure Lupa’s strategic
+                  Proposed project list reviewed to ensure Lupa's strategic
                   goals are delivered.
                 </li>
                 <li>
@@ -371,15 +512,15 @@
                 <li>Final project list communicated to wider Lupa team.</li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
         <div class="w-12 shrink-0 relative z-0"></div>
 
-        <!-- ================= STAGE 4: ALLOCATIONS ================= -->
+        <!-- ================= STAGE 5: ALLOCATIONS ================= -->
         <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="p-6 pb-0 relative z-10 flex-1">
             <div class="flex justify-between items-start mb-4 shrink-0">
@@ -387,7 +528,7 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Stage 4: Allocations
+                  Stage 5: Allocations
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Finalised roadmap
@@ -411,59 +552,69 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Assign projects to Engineers/PMs.</li>
-                    <li>Sequence within quarter.</li>
-                    <li>Add to Linear.</li>
+                    <li>Eng & PM assign projects to Eng and PMs.</li>
+                    <li>Eng & PM sequence projects within the quarter.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip active-PM">PM</span>
-                    <span class="chip active-Eng">Eng</span>
+                    <span class="chip active-Exec">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip active-Eng">Eng</span
+                    ><span class="chip inactive">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-5"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-5"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Engineer Allocations & Sequencing.</p>
               <ul class="list-decimal ml-4 space-y-1">
                 <li>Assign projects to engineers and PMs.</li>
                 <li>Sequence projects within the quarter.</li>
-                <li>Add finalised roadmap to Linear.</li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- CONNECTOR -->
         <div class="w-12 shrink-0 relative z-0"></div>
 
-        <!-- ================= STAGE 5: KICK-OFF PREP ================= -->
+        <!-- ================= STAGE 6: KICK-OFF PREP ================= -->
         <div
-          class="flex flex-col w-[450px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
+          class="flex flex-col w-[400px] bg-white border-2 border-dashed border-slate-300 rounded-2xl shadow-sm relative z-10"
         >
           <div class="p-6 pb-0 relative z-10 flex-1">
             <div class="flex justify-between items-start mb-4 shrink-0">
@@ -471,7 +622,7 @@
                 <h2
                   class="font-bold text-slate-700 uppercase tracking-widest text-sm"
                 >
-                  Stage 5: Kick-off Prep
+                  Stage 6: Kick-off Prep
                 </h2>
                 <p class="text-xs text-blue-600 font-bold mt-1">
                   Output: Ready to build
@@ -495,55 +646,172 @@
                   <ul
                     class="text-[10px] text-slate-500 list-disc ml-3 leading-tight space-y-1"
                   >
-                    <li>Communicate roadmap.</li>
-                    <li>Write PRDs.</li>
-                    <li>Generate Designs for first projects.</li>
+                    <li>PMs add finalised roadmap to Linear.</li>
+                    <li>PMs communicate allocations to Eng team.</li>
+                    <li>PMs & UX start drafting PRDs for early projects.</li>
                   </ul>
                   <div class="flex flex-wrap gap-1 mt-1">
-                    <span class="chip active-PM">PM</span>
-                    <span class="chip active-UX">UX</span>
+                    <span class="chip inactive">Exec</span
+                    ><span class="chip active-PM">PM</span
+                    ><span class="chip inactive">Eng</span
+                    ><span class="chip active-UX">UX</span
+                    ><span class="chip inactive">CT</span
+                    ><span class="chip inactive">QA</span
+                    ><span class="chip inactive">Users</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <details
-            class="group border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
+          <div
+            class="mt-auto border-t border-slate-100 bg-slate-50/50 rounded-b-2xl"
           >
-            <summary
-              class="flex justify-between items-center p-4 cursor-pointer text-[10px] font-bold text-slate-500 uppercase tracking-wider hover:bg-slate-100 transition-colors rounded-b-2xl group-open:rounded-none group-open:bg-slate-100"
-            >
-              <span>Read Details</span>
-              <svg
-                class="w-4 h-4 transform group-open:rotate-180 transition-transform text-slate-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </summary>
             <div
-              class="px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
+              class="flex justify-between items-center p-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider bg-slate-100 rounded-b-2xl"
+            >
+              <span>Copy text description</span>
+              <button
+                class="copy-btn ml-auto text-slate-400 hover:text-slate-600 cursor-pointer"
+                onclick="copyDescription(this)"
+                data-content-id="content-6"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              id="content-6"
+              class="section-description px-6 pb-6 pt-2 text-[11px] text-slate-600 leading-relaxed bg-slate-50 rounded-b-2xl"
             >
               <p class="italic mb-2">Kick-off Preparation.</p>
               <ul class="list-decimal ml-4 space-y-1">
-                <li>Roadmap communicated to wider Lupa team.</li>
-                <li>
-                  Product team starts work to write PRDs and generate designs
-                  for the first projects.
-                </li>
+                <li>PMs add finalised roadmap to Linear.</li>
+                <li>PMs communicate allocations to Eng team.</li>
+                <li>PMs & UX start drafting PRDs for early projects.</li>
               </ul>
             </div>
-          </details>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      function copyDescription(button) {
+        const contentId = button.getAttribute("data-content-id");
+        const contentDiv = document.getElementById(contentId);
+
+        if (!contentDiv) return;
+
+        // Convert HTML content to markdown
+        let markdown = "";
+
+        // Process all child elements
+        const processNode = (node, depth = 0) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent.trim();
+            if (text) markdown += text + " ";
+            return;
+          }
+
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const tagName = node.tagName.toLowerCase();
+
+            if (tagName === "p") {
+              const text = node.textContent.trim();
+              if (text) {
+                // Check if it's italic
+                if (node.classList.contains("italic")) {
+                  markdown += "\n\n*" + text + "*\n\n";
+                } else {
+                  markdown += "\n\n" + text + "\n\n";
+                }
+              }
+            } else if (tagName === "ul") {
+              const items = node.querySelectorAll(":scope > li");
+              const isCircle =
+                node.classList.contains("list-[circle]") ||
+                node.classList.contains("list-circle");
+
+              items.forEach((li) => {
+                let itemText = "";
+                const processListItem = (itemNode) => {
+                  if (itemNode.nodeType === Node.TEXT_NODE) {
+                    itemText += itemNode.textContent.trim() + " ";
+                  } else if (itemNode.nodeType === Node.ELEMENT_NODE) {
+                    if (itemNode.tagName.toLowerCase() === "strong") {
+                      itemText += "**" + itemNode.textContent.trim() + "** ";
+                    } else if (itemNode.tagName.toLowerCase() === "ul") {
+                      // Handle nested lists
+                      const nestedItems =
+                        itemNode.querySelectorAll(":scope > li");
+                      nestedItems.forEach((nestedLi) => {
+                        const nestedText = nestedLi.textContent.trim();
+                        itemText += "\n  - " + nestedText;
+                      });
+                    } else {
+                      Array.from(itemNode.childNodes).forEach(processListItem);
+                    }
+                  }
+                };
+
+                Array.from(li.childNodes).forEach(processListItem);
+                const bullet = isCircle ? "-" : "-";
+                markdown += bullet + " " + itemText.trim() + "\n";
+              });
+              markdown += "\n";
+            } else if (tagName === "li") {
+              // This will be handled by parent ul
+              return;
+            } else if (tagName === "strong") {
+              const text = node.textContent.trim();
+              markdown += "**" + text + "**";
+            } else {
+              // Recursively process children
+              Array.from(node.childNodes).forEach((child) =>
+                processNode(child, depth)
+              );
+            }
+          }
+        };
+
+        Array.from(contentDiv.childNodes).forEach((node) => processNode(node));
+
+        // Clean up extra newlines and spaces
+        markdown = markdown
+          .replace(/\n{3,}/g, "\n\n")
+          .replace(/ +/g, " ")
+          .trim();
+
+        // Copy to clipboard
+        navigator.clipboard
+          .writeText(markdown)
+          .then(() => {
+            // Visual feedback
+            const originalColor = button.style.color;
+            button.classList.add("copied");
+            button.style.color = "#10b981";
+
+            setTimeout(() => {
+              button.classList.remove("copied");
+              button.style.color = originalColor || "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy:", err);
+            alert("Failed to copy to clipboard");
+          });
+      }
+    </script>
   </body>
 </html>

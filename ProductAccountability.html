@@ -62,12 +62,12 @@
   <body
     class="bg-white text-slate-800 font-sans h-screen w-screen overflow-y-auto flex flex-col p-2"
   >
-    <div class="max-w-7xl mx-0">
+    <div class="mx-0">
       <!-- Main Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex gap-6 flex-wrap">
         <!-- CARD 1: PRODUCT MARKET FIT -->
         <div
-          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+          class="max-w-[750px] bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
         >
           <!-- Header -->
           <div class="p-6 pb-4 border-b border-slate-100 relative">
@@ -331,41 +331,58 @@
               <div class="text-xs text-slate-600 leading-relaxed">
                 <p class="mb-3 font-medium">
                   PMs own ensuring that each feature is solving a real problem
-                  and continues to deliver value after release by:
+                  and continues to deliver value after release.
                 </p>
-                <ul class="detail-list space-y-1.5 ml-1">
-                  <li>
-                    Maintaining structured discovery across users, CT/CS,
-                    Advisors.
-                  </li>
-                  <li>
-                    Converting insights into clear problem definitions, success
-                    metrics, and PRD requirements.
-                  </li>
-                  <li>
-                    Tracking post-launch performance (Posthog/Autoplay) and
-                    propose iterations where value is not yet realised.
-                  </li>
-                </ul>
-                <p class="mb-3 font-medium mt-4">
-                  CT completes the feedback loop by validating products meet
-                  user requirements post-release:
-                </p>
-                <ul class="detail-list space-y-1.5 ml-1">
-                  <li>
-                    Provides client insights and feedback during discovery and
-                    scoping phases.
-                  </li>
-                  <li>
-                    Validates that released features solve real client problems
-                    through direct user interactions.
-                  </li>
-                  <li>
-                    Collects and reports post-launch feedback, issues, and
-                    enhancement requests to close the client → product feedback
-                    loop.
-                  </li>
-                </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <strong class="text-slate-800 block mb-1">For PMs:</strong>
+                    <ul class="detail-list space-y-1 ml-1">
+                      <li>
+                        Maintaining structured discovery across users, CT/CS,
+                        Advisors.
+                      </li>
+                      <li>
+                        Converting insights into clear problem definitions,
+                        success metrics, and PRD requirements.
+                      </li>
+                      <li>
+                        Tracking post-launch performance (Posthog/Autoplay) and
+                        propose iterations where value is not yet realised.
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <strong class="text-slate-800 block mb-1">For Eng:</strong>
+                    <ul class="detail-list space-y-1 ml-1">
+                      <li>
+                        Providing feasibility input during discovery to ensure
+                        proposed solutions are technically viable.
+                      </li>
+                      <li>
+                        Understanding user context and technical constraints to
+                        inform problem-solving approaches.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <strong class="text-slate-800 block mb-1">For CT:</strong>
+                  <ul class="detail-list space-y-1 ml-1">
+                    <li>
+                      Provides client insights and feedback during discovery and
+                      scoping phases.
+                    </li>
+                    <li>
+                      Validates that released features solve real client
+                      problems through direct user interactions.
+                    </li>
+                    <li>
+                      Collects and reports post-launch feedback, issues, and
+                      enhancement requests to close the client → product
+                      feedback loop.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -373,7 +390,7 @@
 
         <!-- CARD 2: PROJECT TIMELINES -->
         <div
-          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+          class="max-w-[750px] bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
         >
           <div class="p-6 pb-4 border-b border-slate-100 relative">
             <div class="flex items-center justify-between">
@@ -671,7 +688,7 @@
 
         <!-- CARD 3: STABILITY & DELIVERY -->
         <div
-          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+          class="max-w-[750px] bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
         >
           <div class="p-6 pb-4 border-b border-slate-100 relative">
             <div class="flex items-center justify-between">
@@ -968,7 +985,7 @@
 
         <!-- CARD 4: FEATURE RELEASE -->
         <div
-          class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
+          class="max-w-[750px] bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col"
         >
           <div class="p-6 pb-4 border-b border-slate-100 relative">
             <div class="flex items-center justify-between">
